@@ -24,7 +24,7 @@ variable "subscription_id" {
 
 variable "environment" {
   type = string
-  default = "Production"
+  default = "production"
   
 }
 
