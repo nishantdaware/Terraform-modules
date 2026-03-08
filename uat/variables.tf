@@ -5,17 +5,17 @@
 
 variable "resource_group_name" {
   type = string
-  default = "1-5befc17b-playground-sandbox"
+  default = "1-58276c2f-playground-sandbox"
 }
 
 variable "location" {
   type = string
-  default = "eastus"
+  default = "southcentralus"
 }
 
 variable "subscription_id" {
   type = string
-  default = "2213e8b1-dbc7-4d54-8aff-b5e315df5e5b"
+  default = "28e1e42a-4438-4c30-9a5f-7d7b488fd883"
 }
 
 ###############
@@ -35,34 +35,6 @@ variable "support_team_email" {
 variable "project_name" {
   type = string
   default = "Terraform Modules Hands On"
-}
-
-##############
-#AKS Variables
-##############
-
-variable "aks_node_pool_name" {
-  type = string
-  description = "Aks node pool name, e.g. default/nodepool1"
-  default = "nodepooluat"
-}
-
-variable "aks_node_count" {
-  type = number
-  description = "Number of node count, e.g. 2/3/4"
-  default = 2
-}
-
-variable "aks_vm_size" {
-  type = string
-  description = "Aks VM size, e.g. Standard_B2s/Standard_D2s_v3"
-  default = "Standard_B2s"
-}
-
-variable "aks_identity_type" {
-  type = string
-  description = "Aks Identity type, e.g. SystemAssigned/UserAssigned/None"
-  default = "SystemAssigned"
 }
 
 ###########################
@@ -85,13 +57,13 @@ variable "account_replication_type" {
 # SQL Server Variables
 ######################
 
-variable "sql_admin_uat" {
+variable "sql_admin" {
   type = string
   description = "SQL Server administrator login name, e.g. sqladmin"
   default = "sqladminuat"
 }
 
-variable "sql_password_uat" {
+variable "sql_password" {
   type = string
   description = "SQL Server administrator login password"
   sensitive = true
@@ -100,11 +72,33 @@ variable "sql_password_uat" {
 variable "sql_database_name" {
   type = string
   description = "SQL Database name, e.g. mydatabase"
-  default = "mydatabaseuat"
+  default = "dbuat"
 }
 
 variable "sql_database_sku" {
   type = string
   description = "SQL Database SKU, e.g. Basic/S0/S1/P1"
   default = "Basic"
+}
+
+###########################
+# Virtual Machine Variables
+###########################
+
+variable "vm_size" {
+  type = string
+  description = "Virtual machine size, e.g. Standard_B1s/Standard_F2"
+  default = "Standard_B1s"
+}
+
+variable "vm_admin_username" {
+  type = string
+  description = "Virtual machine administrator username"
+  default = "vm_admin_uat"
+}
+
+variable "storage_account_type" {
+  type = string
+  description = "Storage account type, e.g. Standard_LRS/Premium_LRS"
+  default = "Standard_LRS"
 }

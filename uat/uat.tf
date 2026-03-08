@@ -6,14 +6,13 @@ module "uat" {
     environment                 = var.environment
     support_team_email          = var.support_team_email
     project_name                = var.project_name
-    aks_node_pool_name          = var.aks_node_pool_name
-    aks_node_count              = var.aks_node_count
-    aks_vm_size                 = var.aks_vm_size
-    aks_identity_type           = var.aks_identity_type
     storage_account_tier        = var.storage_account_tier
     account_replication_type    = var.account_replication_type
-    sql_admin                   = var.sql_admin_uat
-    sql_password                = var.sql_password_uat
+    sql_admin                   = var.sql_admin
+    sql_password                = var.sql_password
     sql_database_name           = var.sql_database_name
     sql_database_sku            = var.sql_database_sku
+    vm_size                     = var.vm_size
+    vm_admin_username           = var.vm_admin_username
+    storage_account_type        = var.storage_account_type
 }
